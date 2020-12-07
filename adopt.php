@@ -1,5 +1,5 @@
 <?php
-include('functions/db_conn.php');
+include('db_conn.php');
 /*****************************************************************************
 Title:  	Digital Animal Adoption
 Use:     	Final Project

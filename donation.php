@@ -1,5 +1,5 @@
 <?php
-include('functions/db_conn.php');
+include('db_conn.php');
 /*****************************************************************************
 Title:  	Digital Animal Adoption
 Use:     	Final Project
@@ -83,7 +83,7 @@ function addDonation($animal_name, $animal_color, $animal_type, $animal_health_i
             include('db_error.php');
 
     } else {
-        include('functions/db_conn.php');
+        include('db_conn.php');
 
         // Add Animal to the database  
         $queryAddDonation = 'INSERT INTO donation_queue (animal_name, animal_color, animal_type, animal_health_issues, animal_neutered, animal_microchip, phone, email)
@@ -125,7 +125,7 @@ function updateDonation($donation_id, $animal_name, $animal_color, $animal_type,
             include('db_error.php');
 
     } else {
-        include('functions/db_conn.php');
+        include('db_conn.php');
         // Add Donation to the database  
         $queryEditDonation = 'UPDATE donation_queue 
                               SET
@@ -170,7 +170,7 @@ function deleteDonation($donation_id) {
             include('db_error.php');
 
     } else {
-        include('functions/db_conn.php');
+        include('db_conn.php');
 
         $queryDeleteDonation = 'DELETE FROM donation_queue
                                 WHERE donation_id = :donation_id';
