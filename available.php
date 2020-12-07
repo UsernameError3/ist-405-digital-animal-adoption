@@ -32,7 +32,7 @@ Tested:     11/29/20
     <div class="content content-padding header-padding">
         <div class="center-content">
   
-            <a class="button" href="forms/adopt.php">Adopt</a>
+            <a class="button" href="adopt.php">Adopt</a>
             
         </div>
     </div>

@@ -212,7 +212,7 @@ function deleteDonation($donation_id) {
     <div class="content content-padding header-padding">
         <div class="center-content">
   
-            <a class="button" href="forms/donate.php">Donate</a>
+            <a class="button" href="donate.php">Donate</a>
 
             <table>
                 <tr>
