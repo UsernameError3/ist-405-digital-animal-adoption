@@ -118,7 +118,7 @@ function adoptionEmail($fname, $lname, $city, $state, $phone, $email, $current_p
                     <td><?php echo $index['animal_microchip'];?></td>
                     <td>
                         <!-- Send Adoption Email -->
-                        <form action="donate.php" method="post">
+                        <form action="adopt.php" method="post">
                             <input type="hidden" name="animal_id" value="<?php echo $index['animal_id']; ?>">
                             <input type="submit" name="adopt" value="adopt">
                         </form>
