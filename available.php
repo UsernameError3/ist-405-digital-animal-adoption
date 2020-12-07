@@ -16,23 +16,23 @@ Tested:     11/29/20
 <html>
 <head>
     <title>Digital Animal Adoption</title>
-    <link rel="stylesheet" type="text/css" href="../ist-405-digital-animal-adoption/css/main.css" />
-    <link rel="icon" type="image/png" href="../ist-405-digital-animal-adoption/images/example_cat.jpg"/>
+    <link rel="stylesheet" type="text/css" href="css/main.css" />
+    <link rel="icon" type="image/png" href="images/example_cat.jpg"/>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 </head>
 <body>
     <ul class="nav">
-        <li class="left"><a class="nav-link" href="../index.php">Home</a></li>
-        <li class="right"><a class="nav-link" href="../contact.php">Contact</a></li>
-        <li class="right"><a class="nav-link" href="../about.php">About</a></li>
-        <li class="right"><a class="nav-link" href="../donation.php">Donation</a></li>
-        <li class="right"><a class="nav-link active" href="../available.php">Adoption</a></li>
+        <li class="left"><a class="nav-link" href="index.php">Home</a></li>
+        <li class="right"><a class="nav-link" href="contact.php">Contact</a></li>
+        <li class="right"><a class="nav-link" href="about.php">About</a></li>
+        <li class="right"><a class="nav-link" href="donation.php">Donation</a></li>
+        <li class="right"><a class="nav-link active" href="available.php">Adoption</a></li>
         
     </ul>
     <div class="content content-padding header-padding">
         <div class="center-content">
   
-            <a class="button" href="../forms/adopt.php">Adopt</a>
+            <a class="button" href="forms/adopt.php">Adopt</a>
             
         </div>
     </div>
