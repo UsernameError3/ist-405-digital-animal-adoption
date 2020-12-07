@@ -15,7 +15,7 @@ Tested:     11/29/20
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Digital Animal Adoption</title>
+    <title>Digital Animal Adoption - About</title>
     <link rel="stylesheet" type="text/css" href="css/main.css" />
     <link rel="icon" type="image/png" href="images/example_cat.jpg"/>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
