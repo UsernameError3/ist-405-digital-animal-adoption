@@ -74,9 +74,6 @@ function addDonation($animal_name, $animal_color, $animal_type, $animal_health_i
         $animal_name == null || $animal_name == false ||
         $animal_color == null || $animal_color == false ||
         $animal_type == null || $animal_type == false ||
-        $animal_health_issues == null || $animal_health_issues == false ||
-        $animal_neutered == null || $animal_neutered == false ||
-        $animal_microchip == null || $animal_microchip == false ||
         $phone == null || $phone == false ||
         $email == null || $email == false) {
             $error_message = "Invalid animal data. Check all fields and try again.";
@@ -116,9 +113,6 @@ function updateDonation($donation_id, $animal_name, $animal_color, $animal_type,
         $animal_name == null || $animal_name == false ||
         $animal_color == null || $animal_color == false ||
         $animal_type == null || $animal_type == false ||
-        $animal_health_issues == null || $animal_health_issues == false ||
-        $animal_neutered == null || $animal_neutered == false ||
-        $animal_microchip == null || $animal_microchip == false ||
         $phone == null || $phone == false ||
         $email == null || $email == false) {
             $error_message = "Invalid animal data. Check all fields and try again.";
