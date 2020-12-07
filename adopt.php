@@ -10,6 +10,20 @@ Developed:  11/29/20
 Tested:     11/29/20
 ******************************************************************************/
 
+if ( isset($_POST['adopt']) ) {
+    $animal_id = filter_input(INPUT_POST, 'animal_id', FILTER_VALIDATE_INT);
+
+    // List existing information by 'donation_id'
+    $queryAnimals = 'SELECT * FROM available_animals
+                     WHERE animal_id = :animal_id';
+
+    $db_list_process = $db->prepare($queryAnimals);
+    $db_list_process->bindValue(':animal_id', $animal_id);
+    $db_list_process->execute();
+    $animal = $db_list_process->fetch();
+    $db_list_process->closeCursor();
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -31,7 +45,7 @@ Tested:     11/29/20
     </ul>
     <div class="content content-padding header-padding">
         <div class="center-content">
-    
+            
             <form class="large" action="available.php" method="post" >
 
                 <label>First Name:</label>
@@ -64,11 +78,21 @@ Tested:     11/29/20
                 <label>Residency Allows Pets?</label>
                 <input type="checkbox" name="Residency_Check" value=""><br>
 
+                <input type="hidden" value="Animal ID: <?php echo $animal['animal_id'];?>" name="adopt_animal_id"><br>
+                <input type="hidden" value="Animal Name: <?php echo $animal['animal_name'];?>" name="adopt_animal_name"><br>
+                <input type="hidden" value="Animal Color: <?php echo $animal['animal_color'];?>" name="adopt_animal_color"><br>
+                <input type="hidden" value="Animal Type: <?php echo $animal['animal_type'];?>" name="adopt_animal_type"><br>
+                <input type="hidden" value="Animal Health: <?php echo $animal['animal_health_issues'];?>" name="adopt_animal_health"><br>
+                <input type="hidden" value="Animal Neuter: <?php echo $animal['animal_neutered'];?>" name="adopt_animal_neuter"><br>
+                <input type="hidden" value="Animal Microchip: <?php echo $animal['animal_microchip'];?>" name="animal_microchip"><br>
+
                 <br>
-                <input type="submit" class="button" name="Adopt" value="Submit Application" /><br>
+                <input type="submit" class="button" name="adopt_submit" value="Submit Application" /><br>
 
             </form>
         </div>    
     </div>
 </body>
 </html>
+
+
