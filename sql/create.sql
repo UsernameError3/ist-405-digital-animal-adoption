@@ -1,7 +1,4 @@
 
-
-
-
 /*****************************************************************************
 Title:  	Digital Animal Adoption
 Use:     	Final Project
@@ -10,8 +7,12 @@ School:  	Southern Illinois University
 Term:    	Fall 2020
 Developed:  11/29/20
 Developed:  11/29/20
+
+Test: mysql -u root -p bikeshop < 'path/to/create.sql'
+
 ******************************************************************************/
 
+USE animals;
 
 /* Create Table */
 CREATE TABLE available_animals
@@ -22,7 +23,7 @@ CREATE TABLE available_animals
     animal_type varchar(15),
     animal_health_issues boolean,
     animal_neutered boolean,
-    animal_microchip boolean
+    animal_microchip boolean,
     PRIMARY KEY (animal_id)
 );
 

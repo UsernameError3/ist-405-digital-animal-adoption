@@ -10,7 +10,7 @@ Developed:  10/11/20
 Tested:     10/11/20
 ******************************************************************************/
 
-$dsn = 'mysql:host=127.0.0.1;dbname=vehicles';
+$dsn = 'mysql:host=127.0.0.1;dbname=animals';
 $username = 'root';
 $password = 'abc123';
 
