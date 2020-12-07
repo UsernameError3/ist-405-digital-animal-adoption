@@ -34,11 +34,7 @@ if ( isset($_POST['edit']) ) {
             <input type="text" name="animal_color" value="' . $donation['animal_color'] . '"><br>
 
             <label>Animal Type:</label>
-            <select name="animal_type" id="animal_type_list">
-                <option value="">Choose Animal Type</option>
-                <option value="dog">Dog</option>
-                <option value="cat">Cat</option>
-            </select><br>
+            <input type="text" name="animal_type" value="' . $donation['animal_type'] . '"><br>
 
             <br>
             <p class="red">Pet Health Check:</p>
@@ -79,11 +75,7 @@ if ( isset($_POST['edit']) ) {
             <input type="text" name="animal_color" value=""><br>
 
             <label>Animal Type:</label>
-            <select name="animal_type" id="animal_type_list">
-                <option value="">Choose Animal Type</option>
-                <option value="dog">Dog</option>
-                <option value="cat">Cat</option>
-            </select><br>
+            <input type="text" name="animal_type" value=""><br>
 
             <br>
             <p class="red">Pet Health Check:</p>
