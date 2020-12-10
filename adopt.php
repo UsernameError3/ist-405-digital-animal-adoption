@@ -87,6 +87,7 @@ if ( isset($_POST['adopt']) ) {
                 <input type="hidden" value="Animal Microchip: <?php echo $animal['animal_microchip'];?>" name="animal_microchip"><br>
 
                 <br>
+                <label>On Submission of Form, Your Information and Selected Animal will be emailed to: digital_animal_adoption@daa.com</label>
                 <input type="submit" class="button" name="adopt_submit" value="Submit Application" /><br>
 
             </form>

@@ -41,7 +41,7 @@ Tested:     11/29/20
             </ul>
 
             <h1 class="center">Have an animal to Donate?</h1>
-            <a class="button" href="forms/donate.php">Donate</a>
+            <a class="button" href="donate.php">Donate</a>
         </div>
     </div>
 </body>
