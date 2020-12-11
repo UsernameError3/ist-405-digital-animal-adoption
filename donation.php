@@ -57,10 +57,6 @@ if (isset($_POST['donate'])) {
         $posted_animal_microchip = 1;
     }
 
-    echo '<p>'.$posted_animal_health_issues.'</p>';
-    echo '<p>'.$posted_animal_neutered.'</p>';
-    echo '<p>'.$posted_animal_microchip.'</p>';
-
     addDonation($posted_animal_name, $posted_animal_color, $posted_animal_type, $posted_animal_health_issues, $posted_animal_neutered, $posted_animal_microchip, $posted_phone, $posted_email);
 }
 
@@ -68,7 +64,7 @@ if (isset($_POST['donate'])) {
 if ( isset($_POST['edited']) ) {
 
     // Get the Edited Donation form data
-    $posted_donation_id = filter_input(INPUT_POST, 'donation_id', FILTER_VALIDATE_INT);
+    $posted_donation_id = filter_input(INPUT_POST, 'donation_id');
     $posted_animal_name = filter_input(INPUT_POST, 'animal_name');
     $posted_animal_color = filter_input(INPUT_POST, 'animal_color');
     $posted_animal_type = filter_input(INPUT_POST, 'animal_type');
@@ -122,10 +118,6 @@ function addDonation($animal_name, $animal_color, $animal_type, $animal_health_i
 
     } else {
         include('db_conn.php');
-
-        echo '<p>'.$animal_health_issues.'</p>';
-        echo '<p>'.$animal_neutered.'</p>';
-        echo '<p>'.$animal_microchip.'</p>';
 
         // Add Animal to the database  
         $queryAddDonation = 'INSERT INTO donation_queue (animal_name, animal_color, animal_type, animal_health_issues, animal_neutered, animal_microchip, phone, email)
