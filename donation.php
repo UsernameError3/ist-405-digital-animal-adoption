@@ -45,13 +45,13 @@ if (isset($_POST['donate'])) {
         $posted_animal_health_issues = 'TRUE';
     }
 
-    if ($checkbox_animal_health_issues != 'TRUE') {
+    if ($checkbox_animal_neutered != 'TRUE') {
         $posted_animal_neutered = 'FALSE';
     } else {
         $posted_animal_neutered = 'TRUE';
     }
 
-    if ($checkbox_animal_health_issues != 'TRUE') {
+    if ($checkbox_animal_microchip != 'TRUE') {
         $posted_animal_microchip = 'FALSE';
     } else {
         $posted_animal_microchip = 'TRUE';
@@ -81,18 +81,18 @@ if ( isset($_POST['edited']) ) {
         $posted_animal_health_issues = 'TRUE';
     }
 
-    if ($checkbox_animal_health_issues != 'TRUE') {
+    if ($checkbox_animal_neutered != 'TRUE') {
         $posted_animal_neutered = 'FALSE';
     } else {
         $posted_animal_neutered = 'TRUE';
     }
 
-    if ($checkbox_animal_health_issues != 'TRUE') {
+    if ($checkbox_animal_microchip != 'TRUE') {
         $posted_animal_microchip = 'FALSE';
     } else {
         $posted_animal_microchip = 'TRUE';
     }
-
+    
     updateDonation($posted_donation_id, $posted_animal_name, $posted_animal_color, $posted_animal_type, $posted_animal_health_issues, $posted_animal_neutered, $posted_animal_microchip, $posted_phone, $posted_email);
 
 }
