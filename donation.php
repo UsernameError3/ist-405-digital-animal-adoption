@@ -123,9 +123,9 @@ function addDonation($animal_name, $animal_color, $animal_type, $animal_health_i
     } else {
         include('db_conn.php');
 
-        echo '<p>'.$posted_animal_health_issues.'</p>';
-        echo '<p>'.$posted_animal_neutered.'</p>';
-        echo '<p>'.$posted_animal_microchip.'</p>';
+        echo '<p>'.$animal_health_issues.'</p>';
+        echo '<p>'.$animal_neutered.'</p>';
+        echo '<p>'.$animal_microchip.'</p>';
 
         // Add Animal to the database  
         $queryAddDonation = 'INSERT INTO donation_queue (animal_name, animal_color, animal_type, animal_health_issues, animal_neutered, animal_microchip, phone, email)
