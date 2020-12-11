@@ -265,9 +265,21 @@ function deleteDonation($donation_id) {
                     <td><?php echo $index['animal_name'];?></td>
                     <td><?php echo $index['animal_color'];?></td>
                     <td><?php echo $index['animal_type'];?></td>
-                    <td><?php echo $index['animal_health_issues'];?></td>
-                    <td><?php echo $index['animal_neutered'];?></td>
-                    <td><?php echo $index['animal_microchip'];?></td>
+                    <td><?php if ($index['animal_health_issues'] != '1' || $index['animal_health_issues'] != 1 || $index['animal_health_issues'] != 'TRUE') {
+                            echo $fieldHealth = 'FALSE';
+                        } else {
+                            echo $fieldHealth = 'TRUE';
+                        }?></td>
+                    <td><?php if ($index['animal_neutered'] != '1' || $index['animal_neutered'] != 1 || $index['animal_neutered'] != 'TRUE') {
+                            echo $fieldNeuter = 'FALSE';
+                        } else {
+                            echo $fieldNeuter = 'TRUE';
+                        }?></td>
+                    <td><?php if ($index['animal_microchip'] != '1' || $index['animal_microchip'] != 1 || $index['animal_microchip'] != 'TRUE') {
+                            echo $fieldMicrochip = 'FALSE';
+                        } else {
+                            echo $fieldMicrochip = 'TRUE';
+                        }?></td>
                     <td><?php echo $index['phone'];?></td>
                     <td><?php echo $index['email'];?></td>
                     <td>
