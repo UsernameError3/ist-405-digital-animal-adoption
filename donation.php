@@ -113,7 +113,7 @@ function addDonation($animal_name, $animal_color, $animal_type, $animal_health_i
         $animal_type == null || $animal_type == false ||
         $phone == null || $phone == false ||
         $email == null || $email == false) {
-            $error_message = "Invalid animal data. Check all fields and try again.";
+            $error_message = "New Donation: Invalid animal data. Check all fields and try again.";
             header('Location: db_error.php');
 
     } else {
@@ -144,6 +144,17 @@ function addDonation($animal_name, $animal_color, $animal_type, $animal_health_i
 // Execute Database Update
 function updateDonation($donation_id, $animal_name, $animal_color, $animal_type, $animal_health_issues, $animal_neutered, $animal_microchip, $phone, $email) {
 
+
+    echo '<p>'.$donation_id.'</p>';
+    echo '<p>'.$animal_name.'</p>';
+    echo '<p>'.$animal_color.'</p>';
+    echo '<p>'.$animal_type.'</p>';
+    echo '<p>'.$animal_health_issues.'</p>';
+    echo '<p>'.$animal_neutered.'</p>';
+    echo '<p>'.$animal_microchip.'</p>';
+    echo '<p>'.$phone.'</p>';
+    echo '<p>'.$email.'</p>';
+
     
     // Validate inputs
     if ($donation_id == null || $donation_id == false ||
@@ -152,8 +163,8 @@ function updateDonation($donation_id, $animal_name, $animal_color, $animal_type,
         $animal_type == null || $animal_type == false ||
         $phone == null || $phone == false ||
         $email == null || $email == false) {
-            $error_message = "Invalid animal data. Check all fields and try again.";
-            header('Location: db_error.php');
+            $error_message = "Edit Donation: Invalid animal data. Check all fields and try again.";
+            // header('Location: db_error.php');
 
     } else {
         include('db_conn.php');
@@ -187,7 +198,7 @@ function updateDonation($donation_id, $animal_name, $animal_color, $animal_type,
         $db_edit_process->closeCursor();
 
         // Reload the Page
-        header('Location: donation.php');
+        // header('Location: donation.php');
     }
 
 }
