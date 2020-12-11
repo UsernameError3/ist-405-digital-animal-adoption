@@ -40,21 +40,21 @@ if (isset($_POST['donate'])) {
     $checkbox_animal_microchip = filter_input(INPUT_POST, 'animal_microchip');
 
     if ($checkbox_animal_health_issues != 'TRUE') {
-        $posted_animal_health_issues = 'FALSE';
+        $posted_animal_health_issues = 0;
     } else {
-        $posted_animal_health_issues = 'TRUE';
+        $posted_animal_health_issues = 1;
     }
 
     if ($checkbox_animal_neutered != 'TRUE') {
-        $posted_animal_neutered = 'FALSE';
+        $posted_animal_neutered = 0;
     } else {
-        $posted_animal_neutered = 'TRUE';
+        $posted_animal_neutered = 1;
     }
 
     if ($checkbox_animal_microchip != 'TRUE') {
-        $posted_animal_microchip = 'FALSE';
+        $posted_animal_microchip = 0;
     } else {
-        $posted_animal_microchip = 'TRUE';
+        $posted_animal_microchip = 1;
     }
 
     echo '<p>'.$posted_animal_health_issues.'</p>';
@@ -144,7 +144,7 @@ function addDonation($animal_name, $animal_color, $animal_type, $animal_health_i
         $db_add_process->execute();
         $db_add_process->closeCursor();
         
-        // header('Location: donation.php');
+        header('Location: donation.php');
     }
 
 }

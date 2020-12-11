@@ -45,9 +45,13 @@ label {
     padding-right: 25px;
 }
 
-table,
 th {
     border: 1px solid #00CCFF;
+}
+
+td {
+    border-left: 1px solid #00CCFF;
+    border-right: 1px solid #00CCFF;
 }
 
 .large {
