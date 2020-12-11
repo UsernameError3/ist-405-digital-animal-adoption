@@ -29,7 +29,7 @@ Tested:     10/11/20
         <p>There waas an error connecting to the database.</p>
         <p>Error Message: <?php echo $error_message; ?></p>
 
-        <p><a href="../index.php">Return to Main Page</a></p>
+        <p><a href="index.php">Return to Main Page</a></p>
     </main>
 </body>
 

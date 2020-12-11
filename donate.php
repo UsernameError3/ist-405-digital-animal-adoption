@@ -24,6 +24,26 @@ if ( isset($_POST['edit']) ) {
     $donation = $db_list_process->fetch();
     $db_list_process->closeCursor();
 
+    if ($donation['animal_health_issues'] != '1' || $donation['animal_health_issues'] != 1 || $donation['animal_health_issues'] != 'TRUE') {
+        $checkboxHealth = 'checked';
+    } else {
+        $checkboxHealth = '';
+    }
+
+
+    if ($donation['animal_neutered'] != '1' || $donation['animal_neutered'] != 1 || $donation['animal_neutered'] != 'TRUE') {
+        $checkboxNeuter = 'checked';
+    } else {
+        $checkboxNeuter = '';
+    }
+
+    
+    if ($donation['animal_microchip'] != '1' || $donation['animal_microchip'] != 1 || $donation['animal_microchip'] != 'TRUE') {
+        $checkboxMicrochip = 'checked';
+    } else {
+        $checkboxMicrochip = '';
+    }
+
     $form = '
         <form class="large" action="donation.php" method="post" >
 
@@ -40,13 +60,13 @@ if ( isset($_POST['edit']) ) {
             <p class="red">Pet Health Check:</p>
 
             <label>Existing Health Issues:</label>
-            <input type="checkbox" name="animal_health_issues" value="' . $donation['animal_health_issues'] . '"><br>
+            <input type="checkbox" name="animal_health_issues" value="TRUE" '. $checkboxHealth .'><br>
             
             <label>Spayed/Neutered:</label>
-            <input type="checkbox" name="animal_neutered" value="' . $donation['animal_neutered'] . '"><br>
+            <input type="checkbox" name="animal_neutered" value="TRUE" '. $checkboxNeuter .'><br>
 
             <label>Microchipped?:</label>
-            <input type="checkbox" name="animal_microchip" value="' . $donation['animal_microchip'] . '"><br>
+            <input type="checkbox" name="animal_microchip" value="TRUE" '. $checkboxMicrochip .'><br>
 
             <br>
             <p class="red">Contact Information:</p>
@@ -81,13 +101,13 @@ if ( isset($_POST['edit']) ) {
             <p class="red">Pet Health Check:</p>
 
             <label>Existing Health Issues:</label>
-            <input type="checkbox" name="animal_health_issues" value="true"><br>
+            <input type="checkbox" name="animal_health_issues" value="TRUE"><br>
             
             <label>Spayed/Neutered:</label>
-            <input type="checkbox" name="animal_neutered" value="true"><br>
+            <input type="checkbox" name="animal_neutered" value="TRUE"><br>
 
             <label>Microchipped?:</label>
-            <input type="checkbox" name="animal_microchip" value="true"><br>
+            <input type="checkbox" name="animal_microchip" value="TRUE"><br>
 
             <br>
             <p class="red">Contact Information:</p>

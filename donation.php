@@ -32,11 +32,30 @@ if (isset($_POST['donate'])) {
     $posted_animal_name = filter_input(INPUT_POST, 'animal_name');
     $posted_animal_color = filter_input(INPUT_POST, 'animal_color');
     $posted_animal_type = filter_input(INPUT_POST, 'animal_type');
-    $posted_animal_health_issues = filter_input(INPUT_POST, 'animal_health_issues');
-    $posted_animal_neutered = filter_input(INPUT_POST, 'animal_neutered');
-    $posted_animal_microchip = filter_input(INPUT_POST, 'animal_microchip');
     $posted_phone = filter_input(INPUT_POST, 'phone');
     $posted_email = filter_input(INPUT_POST, 'email');
+
+    $checkbox_animal_health_issues = filter_input(INPUT_POST, 'animal_health_issues');
+    $checkbox_animal_neutered = filter_input(INPUT_POST, 'animal_neutered');
+    $checkbox_animal_microchip = filter_input(INPUT_POST, 'animal_microchip');
+
+    if ($checkbox_animal_health_issues != 'true') {
+        $posted_animal_health_issues = 'false';
+    } else {
+        $posted_animal_health_issues = 'true';
+    }
+
+    if ($checkbox_animal_health_issues != 'true') {
+        $posted_animal_neutered = 'false';
+    } else {
+        $posted_animal_neutered = 'true';
+    }
+
+    if ($checkbox_animal_health_issues != 'true') {
+        $posted_animal_microchip = 'false';
+    } else {
+        $posted_animal_microchip = 'true';
+    }
 
     addDonation($posted_animal_name, $posted_animal_color, $posted_animal_type, $posted_animal_health_issues, $posted_animal_neutered, $posted_animal_microchip, $posted_phone, $posted_email);
 }
@@ -49,11 +68,30 @@ if ( isset($_POST['edited']) ) {
     $posted_animal_name = filter_input(INPUT_POST, 'animal_name');
     $posted_animal_color = filter_input(INPUT_POST, 'animal_color');
     $posted_animal_type = filter_input(INPUT_POST, 'animal_type');
-    $posted_animal_health_issues = filter_input(INPUT_POST, 'animal_health_issues');
-    $posted_animal_neutered = filter_input(INPUT_POST, 'animal_neutered');
-    $posted_animal_microchip = filter_input(INPUT_POST, 'animal_microchip');
     $posted_phone = filter_input(INPUT_POST, 'phone');
     $posted_email = filter_input(INPUT_POST, 'email');
+
+    $checkbox_animal_health_issues = filter_input(INPUT_POST, 'animal_health_issues');
+    $checkbox_animal_neutered = filter_input(INPUT_POST, 'animal_neutered');
+    $checkbox_animal_microchip = filter_input(INPUT_POST, 'animal_microchip');
+
+    if ($checkbox_animal_health_issues != 'true') {
+        $posted_animal_health_issues = 'false';
+    } else {
+        $posted_animal_health_issues = 'true';
+    }
+
+    if ($checkbox_animal_health_issues != 'true') {
+        $posted_animal_neutered = 'false';
+    } else {
+        $posted_animal_neutered = 'true';
+    }
+
+    if ($checkbox_animal_health_issues != 'true') {
+        $posted_animal_microchip = 'false';
+    } else {
+        $posted_animal_microchip = 'true';
+    }
 
     updateDonation($posted_donation_id, $posted_animal_name, $posted_animal_color, $posted_animal_type, $posted_animal_health_issues, $posted_animal_neutered, $posted_animal_microchip, $posted_phone, $posted_email);
 
