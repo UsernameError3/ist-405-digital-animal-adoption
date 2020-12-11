@@ -25,23 +25,23 @@ if ( isset($_POST['edit']) ) {
     $db_list_process->closeCursor();
 
     if ($donation['animal_health_issues'] != '1' || $donation['animal_health_issues'] != 1 || $donation['animal_health_issues'] != 'TRUE') {
-        $checkboxHealth = 'checked';
-    } else {
         $checkboxHealth = '';
+    } else {
+        $checkboxHealth = 'checked';
     }
 
 
     if ($donation['animal_neutered'] != '1' || $donation['animal_neutered'] != 1 || $donation['animal_neutered'] != 'TRUE') {
-        $checkboxNeuter = 'checked';
-    } else {
         $checkboxNeuter = '';
+    } else {
+        $checkboxNeuter = 'checked';
     }
 
     
     if ($donation['animal_microchip'] != '1' || $donation['animal_microchip'] != 1 || $donation['animal_microchip'] != 'TRUE') {
-        $checkboxMicrochip = 'checked';
-    } else {
         $checkboxMicrochip = '';
+    } else {
+        $checkboxMicrochip = 'checked';
     }
 
     $form = '
