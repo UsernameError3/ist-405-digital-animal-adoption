@@ -38,16 +38,6 @@ if (isset($_POST['donate'])) {
     $posted_phone = filter_input(INPUT_POST, 'phone');
     $posted_email = filter_input(INPUT_POST, 'email');
 
-    echo 'posted_animal_name: ' . $posted_animal_name;
-    echo 'posted_animal_color: ' . $posted_animal_color;
-    echo 'posted_animal_type: ' . $posted_animal_type;
-    echo 'posted_animal_health_issues: ' . $posted_animal_health_issues;
-    echo 'posted_animal_neutered: ' . $posted_animal_neutered;
-    echo 'posted_animal_microchip: ' . $posted_animal_microchip;
-    echo 'posted_phone: ' . $posted_phone;
-    echo 'posted_email: ' . $posted_email;
-
-
     addDonation($posted_animal_name, $posted_animal_color, $posted_animal_type, $posted_animal_health_issues, $posted_animal_neutered, $posted_animal_microchip, $posted_phone, $posted_email);
 }
 
