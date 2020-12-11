@@ -57,6 +57,10 @@ if (isset($_POST['donate'])) {
         $posted_animal_microchip = 'TRUE';
     }
 
+    console.log($posted_animal_health_issues);
+    console.log($posted_animal_neutered);
+    console.log($posted_animal_microchip);
+
     addDonation($posted_animal_name, $posted_animal_color, $posted_animal_type, $posted_animal_health_issues, $posted_animal_neutered, $posted_animal_microchip, $posted_phone, $posted_email);
 }
 
@@ -118,6 +122,11 @@ function addDonation($animal_name, $animal_color, $animal_type, $animal_health_i
 
     } else {
         include('db_conn.php');
+
+        console.log($animal_health_issues);
+        console.log($animal_neutered);
+        console.log($animal_microchip);
+
 
         // Add Animal to the database  
         $queryAddDonation = 'INSERT INTO donation_queue (animal_name, animal_color, animal_type, animal_health_issues, animal_neutered, animal_microchip, phone, email)
