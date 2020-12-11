@@ -70,14 +70,13 @@ if ( isset($_POST['delete']) ) {
 function addDonation($animal_name, $animal_color, $animal_type, $animal_health_issues, $animal_neutered, $animal_microchip, $phone, $email) {
 
     // Validate inputs
-    if ($donation_id == null || $donation_id == false ||
-        $animal_name == null || $animal_name == false ||
+    if ($animal_name == null || $animal_name == false ||
         $animal_color == null || $animal_color == false ||
         $animal_type == null || $animal_type == false ||
         $phone == null || $phone == false ||
         $email == null || $email == false) {
             $error_message = "Invalid animal data. Check all fields and try again.";
-            include('db_error.php');
+            header('Location: db_error.php');
 
     } else {
         include('db_conn.php');
