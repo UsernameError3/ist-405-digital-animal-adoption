@@ -39,22 +39,22 @@ if (isset($_POST['donate'])) {
     $checkbox_animal_neutered = filter_input(INPUT_POST, 'animal_neutered');
     $checkbox_animal_microchip = filter_input(INPUT_POST, 'animal_microchip');
 
-    if ($checkbox_animal_health_issues != 'true') {
-        $posted_animal_health_issues = 'false';
+    if ($checkbox_animal_health_issues != 'TRUE') {
+        $posted_animal_health_issues = 'FALSE';
     } else {
-        $posted_animal_health_issues = 'true';
+        $posted_animal_health_issues = 'TRUE';
     }
 
-    if ($checkbox_animal_health_issues != 'true') {
-        $posted_animal_neutered = 'false';
+    if ($checkbox_animal_health_issues != 'TRUE') {
+        $posted_animal_neutered = 'FALSE';
     } else {
-        $posted_animal_neutered = 'true';
+        $posted_animal_neutered = 'TRUE';
     }
 
-    if ($checkbox_animal_health_issues != 'true') {
-        $posted_animal_microchip = 'false';
+    if ($checkbox_animal_health_issues != 'TRUE') {
+        $posted_animal_microchip = 'FALSE';
     } else {
-        $posted_animal_microchip = 'true';
+        $posted_animal_microchip = 'TRUE';
     }
 
     addDonation($posted_animal_name, $posted_animal_color, $posted_animal_type, $posted_animal_health_issues, $posted_animal_neutered, $posted_animal_microchip, $posted_phone, $posted_email);
@@ -75,22 +75,22 @@ if ( isset($_POST['edited']) ) {
     $checkbox_animal_neutered = filter_input(INPUT_POST, 'animal_neutered');
     $checkbox_animal_microchip = filter_input(INPUT_POST, 'animal_microchip');
 
-    if ($checkbox_animal_health_issues != 'true') {
-        $posted_animal_health_issues = 'false';
+    if ($checkbox_animal_health_issues != 'TRUE') {
+        $posted_animal_health_issues = 'FALSE';
     } else {
-        $posted_animal_health_issues = 'true';
+        $posted_animal_health_issues = 'TRUE';
     }
 
-    if ($checkbox_animal_health_issues != 'true') {
-        $posted_animal_neutered = 'false';
+    if ($checkbox_animal_health_issues != 'TRUE') {
+        $posted_animal_neutered = 'FALSE';
     } else {
-        $posted_animal_neutered = 'true';
+        $posted_animal_neutered = 'TRUE';
     }
 
-    if ($checkbox_animal_health_issues != 'true') {
-        $posted_animal_microchip = 'false';
+    if ($checkbox_animal_health_issues != 'TRUE') {
+        $posted_animal_microchip = 'FALSE';
     } else {
-        $posted_animal_microchip = 'true';
+        $posted_animal_microchip = 'TRUE';
     }
 
     updateDonation($posted_donation_id, $posted_animal_name, $posted_animal_color, $posted_animal_type, $posted_animal_health_issues, $posted_animal_neutered, $posted_animal_microchip, $posted_phone, $posted_email);
