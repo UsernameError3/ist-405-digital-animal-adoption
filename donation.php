@@ -265,17 +265,23 @@ function deleteDonation($donation_id) {
                     <td><?php echo $index['animal_name'];?></td>
                     <td><?php echo $index['animal_color'];?></td>
                     <td><?php echo $index['animal_type'];?></td>
-                    <td><?php if ($index['animal_health_issues'] != '1' || $index['animal_health_issues'] != 1 || $index['animal_health_issues'] != 'TRUE') {
+                    <td><?php 
+                        $indexed_animal_health = $index['animal_health_issues'];
+                        if ($indexed_animal_health != '1' || $indexed_animal_health != 1 || $indexed_animal_health != true) {
                             echo $fieldHealth = 'FALSE';
                         } else {
                             echo $fieldHealth = 'TRUE';
                         }?></td>
-                    <td><?php if ($index['animal_neutered'] != '1' || $index['animal_neutered'] != 1 || $index['animal_neutered'] != 'TRUE') {
+                    <td><?php 
+                        $indexed_animal_neuter = $index['animal_neutered'];
+                        if ($indexed_animal_neuter != '1' || $indexed_animal_neuter != 1 || $indexed_animal_neuter != true) {
                             echo $fieldNeuter = 'FALSE';
                         } else {
                             echo $fieldNeuter = 'TRUE';
                         }?></td>
-                    <td><?php if ($index['animal_microchip'] != '1' || $index['animal_microchip'] != 1 || $index['animal_microchip'] != 'TRUE') {
+                    <td><?php 
+                        $indexed_animal_microchip = $index['animal_microchip'];
+                        if ($indexed_animal_microchip != '1' || $indexed_animal_microchip != 1 || $indexed_animal_microchip != true) {
                             echo $fieldMicrochip = 'FALSE';
                         } else {
                             echo $fieldMicrochip = 'TRUE';
