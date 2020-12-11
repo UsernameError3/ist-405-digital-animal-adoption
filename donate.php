@@ -81,13 +81,13 @@ if ( isset($_POST['edit']) ) {
             <p class="red">Pet Health Check:</p>
 
             <label>Existing Health Issues:</label>
-            <input type="checkbox" name="animal_health_issues" value="1"><br>
+            <input type="checkbox" name="animal_health_issues" value="true"><br>
             
             <label>Spayed/Neutered:</label>
-            <input type="checkbox" name="animal_neutered" value="1"><br>
+            <input type="checkbox" name="animal_neutered" value="true"><br>
 
             <label>Microchipped?:</label>
-            <input type="checkbox" name="animal_microchip" value="1"><br>
+            <input type="checkbox" name="animal_microchip" value="true"><br>
 
             <br>
             <p class="red">Contact Information:</p>
