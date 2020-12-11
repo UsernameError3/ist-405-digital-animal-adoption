@@ -54,6 +54,17 @@ td {
     border-right: 1px solid #00CCFF;
 }
 
+table,
+th,
+td {
+    border: 1px solid #00CCFF;
+}
+
+table {
+    width: 80%;
+    border-collapse: collapse;
+}
+
 .large {
     font-size: 25px;
     color: #FFFFFF;

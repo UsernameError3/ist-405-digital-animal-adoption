@@ -22,6 +22,27 @@ if ( isset($_POST['adopt']) ) {
     $db_list_process->execute();
     $animal = $db_list_process->fetch();
     $db_list_process->closeCursor();
+
+    $adopt_animal_health = $adopt['animal_health_issues'];
+    if ($adopt_animal_health != '1' || $adopt_animal_health != 1 || $adopt_animal_health != true) {
+        $checkboxHealth = '';
+    } else {
+        $checkboxHealth = 'checked';
+    }
+
+    $adopt_animal_neuter = $adopt['animal_neutered'];
+    if ($adopt_animal_neuter != '1' || $adopt_animal_neuter != 1 || $adopt_animal_neuter != true) {
+        $checkboxNeuter = '';
+    } else {
+        $checkboxNeuter = 'checked';
+    }
+
+    $adopt_animal_microchip = $adopt['animal_microchip'];
+    if ($adopt_animal_microchip != '1' || $adopt_animal_microchip != 1 || $adopt_animal_microchip != true) {
+        $checkboxMicrochip = '';
+    } else {
+        $checkboxMicrochip = 'checked';
+    }
 }
 
 ?>
@@ -82,9 +103,9 @@ if ( isset($_POST['adopt']) ) {
                 <input type="hidden" value="Animal Name: <?php echo $animal['animal_name'];?>" name="adopt_animal_name"><br>
                 <input type="hidden" value="Animal Color: <?php echo $animal['animal_color'];?>" name="adopt_animal_color"><br>
                 <input type="hidden" value="Animal Type: <?php echo $animal['animal_type'];?>" name="adopt_animal_type"><br>
-                <input type="hidden" value="Animal Health: <?php echo $animal['animal_health_issues'];?>" name="adopt_animal_health"><br>
-                <input type="hidden" value="Animal Neuter: <?php echo $animal['animal_neutered'];?>" name="adopt_animal_neuter"><br>
-                <input type="hidden" value="Animal Microchip: <?php echo $animal['animal_microchip'];?>" name="animal_microchip"><br>
+                <input type="hidden" value="Animal Health: <?php echo $checkboxHealth;?>" name="adopt_animal_health"><br>
+                <input type="hidden" value="Animal Neuter: <?php echo $checkboxNeuter;?>" name="adopt_animal_neuter"><br>
+                <input type="hidden" value="Animal Microchip: <?php echo $checkboxMicrochip;?>" name="animal_microchip"><br>
 
                 <br>
                 <label>On Submission of Form, Your Information and Selected Animal will be emailed to: digital_animal_adoption@daa.com</label>
@@ -95,5 +116,3 @@ if ( isset($_POST['adopt']) ) {
     </div>
 </body>
 </html>
-
-

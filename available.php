@@ -31,18 +31,32 @@ if (isset($_POST['adopt_submit'])) {
     $posted_phone = 'Phone: ' . filter_input(INPUT_POST, 'Phone');
     $posted_email = filter_input(INPUT_POST, 'Email');
     $posted_current_pets = 'Current_Pets: ' . filter_input(INPUT_POST, 'Current_Pets');
-    $posted_abuse_check = 'Abuse_Check: ' . filter_input(INPUT_POST, 'Abuse_Check');
-    $posted_residency_check = 'Residency_Check: ' . filter_input(INPUT_POST, 'Residency_Check');
 
     // Gather Selected Animal Info
-    $posted_animal_id = filter_input(INPUT_POST, 'adopt_animal_id');
-    $posted_animal_name = filter_input(INPUT_POST, 'adopt_animal_name');
-    $posted_animal_color = filter_input(INPUT_POST, 'adopt_animal_color');
-    $posted_animal_type = filter_input(INPUT_POST, 'adopt_animal_type');
-    $posted_animal_health_issues = filter_input(INPUT_POST, 'adopt_animal_health');
-    $posted_animal_neutered = filter_input(INPUT_POST, 'adopt_animal_neuter');
-    $posted_animal_microchip = filter_input(INPUT_POST, 'animal_microchip');
+    $posted_animal_id = 'animal_id: ' . filter_input(INPUT_POST, 'adopt_animal_id');
+    $posted_animal_name = 'animal_name: ' . filter_input(INPUT_POST, 'adopt_animal_name');
+    $posted_animal_color = 'animal_color: ' . filter_input(INPUT_POST, 'adopt_animal_color');
+    $posted_animal_type = 'animal_type: ' . filter_input(INPUT_POST, 'adopt_animal_type');
+    $posted_animal_health_issues = 'animal_health_issues: ' . filter_input(INPUT_POST, 'adopt_animal_health');
+    $posted_animal_neutered = 'animal_neutered: ' . filter_input(INPUT_POST, 'adopt_animal_neuter');
+    $posted_animal_microchip = 'animal_microchip: ' . filter_input(INPUT_POST, 'animal_microchip');
     
+    // Checkbox Handling
+    $checkbox_abuse_check = filter_input(INPUT_POST, 'Abuse_Check');
+    $checkbox_residency_check = filter_input(INPUT_POST, 'Residency_Check');
+
+    if ($checkbox_abuse_check != 'TRUE') {
+        $posted_abuse_check = 'FALSE';
+    } else {
+        $posted_abuse_check = 'TRUE';
+    }
+
+    if ($checkbox_residency_check != 'TRUE') {
+        $posted_residency_check = 'FALSE';
+    } else {
+        $posted_residency_check = 'TRUE';
+    }
+
     adoptionEmail($posted_fname, $posted_lname, $posted_city, $posted_state, $posted_phone, $posted_email, $posted_current_pets, $posted_abuse_check, $posted_residency_check, $posted_animal_id, $posted_animal_name, $posted_animal_color, $posted_animal_type, $posted_animal_health_issues, $posted_animal_neutered, $posted_animal_microchip);
 }
 
@@ -113,9 +127,27 @@ function adoptionEmail($fname, $lname, $city, $state, $phone, $email, $current_p
                     <td><?php echo $index['animal_name'];?></td>
                     <td><?php echo $index['animal_color'];?></td>
                     <td><?php echo $index['animal_type'];?></td>
-                    <td><?php echo $index['animal_health_issues'];?></td>
-                    <td><?php echo $index['animal_neutered'];?></td>
-                    <td><?php echo $index['animal_microchip'];?></td>
+                    <td><?php 
+                        $indexed_animal_health = $index['animal_health_issues'];
+                        if ($indexed_animal_health != '1' || $indexed_animal_health != 1 || $indexed_animal_health != true) {
+                            echo $fieldHealth = 'FALSE';
+                        } else {
+                            echo $fieldHealth = 'TRUE';
+                        }?></td>
+                    <td><?php 
+                        $indexed_animal_neuter = $index['animal_neutered'];
+                        if ($indexed_animal_neuter != '1' || $indexed_animal_neuter != 1 || $indexed_animal_neuter != true) {
+                            echo $fieldNeuter = 'FALSE';
+                        } else {
+                            echo $fieldNeuter = 'TRUE';
+                        }?></td>
+                    <td><?php 
+                        $indexed_animal_microchip = $index['animal_microchip'];
+                        if ($indexed_animal_microchip != '1' || $indexed_animal_microchip != 1 || $indexed_animal_microchip != true) {
+                            echo $fieldMicrochip = 'FALSE';
+                        } else {
+                            echo $fieldMicrochip = 'TRUE';
+                        }?></td>
                     <td>
                         <!-- Send Adoption Email -->
                         <form action="adopt.php" method="post">
