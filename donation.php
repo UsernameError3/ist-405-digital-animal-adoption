@@ -92,7 +92,7 @@ if ( isset($_POST['edited']) ) {
     } else {
         $posted_animal_microchip = 'TRUE';
     }
-    
+
     updateDonation($posted_donation_id, $posted_animal_name, $posted_animal_color, $posted_animal_type, $posted_animal_health_issues, $posted_animal_neutered, $posted_animal_microchip, $posted_phone, $posted_email);
 
 }
@@ -153,7 +153,7 @@ function updateDonation($donation_id, $animal_name, $animal_color, $animal_type,
         $phone == null || $phone == false ||
         $email == null || $email == false) {
             $error_message = "Invalid animal data. Check all fields and try again.";
-            include('db_error.php');
+            header('Location: db_error.php');
 
     } else {
         include('db_conn.php');
