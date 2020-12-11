@@ -48,7 +48,7 @@ if ( isset($_POST['edit']) ) {
     $form = '
         <form class="large" action="donation.php" method="post" >
 
-            <input type="text" name="animal_name" value="' . $donation['donation_id'] . '"><br>
+            <input type="hidden" name="donation_id" value="' . $donation['donation_id'] . '"><br>
 
             <label>Animal Name:</label>
             <input type="text" name="animal_name" value="' . $donation['animal_name'] . '"><br>
